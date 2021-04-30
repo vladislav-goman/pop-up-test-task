@@ -1,0 +1,104 @@
+{
+  "product": {
+    "id": 1,
+    "name": "Konsola MICROSOFT XBOX ONE S 500GB + FIFA 19",
+    "code": "10000053",
+    "icon": "/data/gfx/icons/large/7/0/7.jpg",
+    "link": "/pl/products/xbox-4-slim-7.html",
+    "product_type": "product_item"
+  },
+  "sizes": {
+    "unit": "szt.",
+    "unit_single": "szt.",
+    "unit_plural": "szt.",
+    "unit_fraction": "sztuka",
+    "unit_precision": "0",
+    "unit_sellby": 1,
+    "items": {
+      "U": {
+        "type": "U",
+        "name": "Ram 32 GB",
+        "amount": 1,
+        "status": "Produkt dostępny",
+        "price": 125.0
+      },
+      "V": {
+        "type": "V",
+        "name": "Ram 64 GB",
+        "amount": 12,
+        "status": "Produkt dostępny",
+        "price": 159.0
+      },
+      "W": {
+        "type": "W",
+        "name": "Ram 128 GB",
+        "amount": 0,
+        "status": "Produkt niedostępny",
+        "price": 199.0
+      }
+    }
+  },
+  "multiversions": [
+    {
+      "id": "1",
+      "name": "Wariant",
+      "items": {
+        "1-1": {
+          "enabled": true,
+          "selected": true,
+          "products": [
+            {
+              "product_id": 7,
+              "version_priority": "1",
+              "url": "/pl/products/xbox-7.html",
+              "price_difference": "0.00"
+            }
+          ],
+          "values": {
+            "61": {
+              "id": 61,
+              "name": "Srebrny"
+            }
+          },
+          "values_id": "61"
+        },
+        "1-2": {
+          "enabled": true,
+          "products": [
+            {
+              "product_id": 8,
+              "version_priority": "2",
+              "url": "/pl/products/xbox-4-slim-8.html",
+              "price_difference": "-5.00"
+            }
+          ],
+          "values": {
+            "60": {
+              "id": 60,
+              "name": "Czarny"
+            }
+          },
+          "values_id": "60"
+        },
+        "1-3": {
+          "enabled": true,
+          "products": [
+            {
+              "product_id": 27,
+              "version_priority": "2",
+              "url": "/pl/products/xbox-4-slim-27.html",
+              "price_difference": "-10.00"
+            }
+          ],
+          "values": {
+            "59": {
+              "id": 59,
+              "name": "Biały"
+            }
+          },
+          "values_id": "59"
+        }
+      }
+    }
+  ]
+}
