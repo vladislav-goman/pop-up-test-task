@@ -5,18 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-Shop</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.scss" />
   </head>
   <body>
     <header></header>
-    <main id="main">
-
+    <main class="main" id="main">
       <section class="product-list">
         <article class="product">
-          <button class="product__item">XBox</button>
+          <button class="product__button">Add in basket</button>
         </article>
       </section>
 
+      <div id="modal-product" class="modal">
+        <div class="modal__image--container">
+          <img src="./assets/xbox-1-s.jpg" class="modal__image" />
+        </div>
+        <form class="modal__content">
+          <header class="modal__header">
+            <h2 class="modal__name">
+              Konsola MICROSOFT XBOX ONE S 500GB + FIFA 19
+            </h2>
+            <p class="modal__price">125 zl</p>
+          </header>
+
+          <div class="modal__main">
+
+            <div class="size input-section">
+              <h3 class="size__label label">Ram size:</h3>
+              <div id='label-area' class="size__container">
+                <label for="ram_32" class="size__item">Ram 32 GB</label>
+                <label for="ram_64" class="size__item">Ram 64 GB</label>
+                <label for="ram_96" class="size__item">Ram 96 GB</label>
+                <input
+                  class="size__input"
+                  type="radio"
+                  name="ram"
+                  value="32"
+                  id="ram_32"
+                />
+                <input
+                  class="size__input"
+                  type="radio"
+                  name="ram"
+                  value="64"
+                  id="ram_64"
+                />
+                <input
+                  class="size__input"
+                  type="radio"
+                  name="ram"
+                  value="96"
+                  id="ram_96"
+                />
+              </div>
+            </div>
+
+            <div class="color input-section">
+              <h3 class="color__label label">Color:</h3>
+            </div>
+
+          </div>
+
+          <footer class="modal__footer"></footer>
+        </form>
+      </div>
     </main>
     <footer></footer>
+
+    <script src="./js/index.js"></script>
+
   </body>
 </html>

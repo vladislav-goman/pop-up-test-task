@@ -1,0 +1,130 @@
+$main-font-family: "Arial";
+
+$azure-radiance: #0090f6;
+$mine-shaft: #333333;
+$silver-sand: #c3c7c8;
+$white: #ffffff;
+$black: #000000;
+
+$text-color: $mine-shaft;
+$primary-color: $azure-radiance;
+$secondary-color: $silver-sand;
+
+body {
+  font-family: $main-font-family;
+  color: $text-color;
+  background-color: #f8b3b3;
+}
+
+section {
+  width: 100%;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.product-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+
+  &__button {
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    width: 218px;
+    padding: 17px 10px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.modal {
+  padding: 23px 19px 36px 59px;
+  margin: 1rem auto;
+  background-color: white;
+  border-radius: 4px;
+  max-width: 745px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &__content {
+    padding-left: 1rem;
+  }
+
+  &__name {
+    font-weight: 600;
+    margin-bottom: 13px;
+  }
+
+  &__price {
+    color: $primary-color;
+    font-weight: 600;
+  }
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+
+  &__image {
+    width: 100%;
+
+    &--container {
+    }
+  }
+
+  .input-section {
+    .label {
+      margin-bottom: 9px;
+    }
+    margin-bottom: 1rem;
+  }
+
+  .size {
+    &__container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      padding: 12px 22px 13px 18px;
+      display: block;
+      border: 1px solid #474747;
+      border-radius: 8px;
+      margin-right: 1rem;
+      cursor: pointer;
+      color: #474747;
+      transition: 0.3s all;
+      outline: 2px solid $white;
+
+      &.active {
+        border-color: $primary-color;
+        outline: 2px solid $primary-color;
+        color: $black;
+      }
+
+      &:hover {
+        border-color: $primary-color;
+        outline: 2px solid $primary-color;
+        color: $black;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    &__input {
+      display: none;
+    }
+  }
+}
