@@ -11,29 +11,39 @@
   <body>
     <header></header>
     <main class="main" id="main">
-      <section class="product-list">
+      <section id="product-list" class="product-list">
         <article class="product">
-          <button class="product__button">Add in basket</button>
+          <button id="1" class="product__button">Add in basket</button>
         </article>
       </section>
+    </main>
+    <footer></footer>
 
-      <div id="modal-product" class="modal">
+    <div id="modal-product" class="modal">
+      <div class="modal--inner">
         <div class="modal__image--container">
-          <img src="./assets/xbox-1-s.jpg" class="modal__image" />
+          <img src="./assets/xbox-1-s.jpg" alt="XBOX" class="modal__image" />
         </div>
         <form class="modal__content">
           <header class="modal__header">
             <h2 class="modal__name">
               Konsola MICROSOFT XBOX ONE S 500GB + FIFA 19
             </h2>
-            <p class="modal__price">125 zl</p>
+            <button id="close-modal" class="modal__close">
+              <img
+                class="modal__close--icon"
+                src="./assets/cross-sign.svg"
+                alt="Close"
+              />
+            </button>
           </header>
 
           <div class="modal__main">
+            <p class="modal__price">125 zl</p>
 
             <div class="size input-section">
               <h3 class="size__label label">Ram size:</h3>
-              <div id='label-area' class="size__container">
+              <fieldset id="label-area" class="size__container">
                 <label for="ram_32" class="size__item">Ram 32 GB</label>
                 <label for="ram_64" class="size__item">Ram 64 GB</label>
                 <label for="ram_96" class="size__item">Ram 96 GB</label>
@@ -58,22 +68,59 @@
                   value="96"
                   id="ram_96"
                 />
-              </div>
+              </fieldset>
             </div>
 
-            <div class="color input-section">
+            <fieldset id="color" class="color input-section">
               <h3 class="color__label label">Color:</h3>
-            </div>
-
+              <select id="select-color" class="color__select">
+                <option value="silver">Silver</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+              </select>
+            </fieldset>
           </div>
 
-          <footer class="modal__footer"></footer>
+          <footer class="modal__footer">
+            <div class="modal__status">
+              <img src="./assets/check.svg" alt="Check mark" />
+              <p>Product is available</p>
+            </div>
+            <div class="modal__info">
+              <img src="./assets/clock.svg" alt="Clock icon" />
+              <div class="container">
+                <p>We can ship today!</p>
+                <p class="highlight">Check times and costs</p>
+              </div>
+            </div>
+            <div id="quantityInputArea" class="modal__quantity">
+              <div class="tweak minus">
+                <img
+                  id="minus"
+                  class="icon"
+                  src="./assets/minus-sign.svg"
+                  alt="Minus"
+                />
+              </div>
+              <input
+                class="number-input"
+                type="number"
+                name="Quantity"
+                id="quantityInput"
+                min="1"
+                max="100"
+                default="1"
+              />
+              <div class="tweak plus">
+                <img id="plus" class="icon" src="./assets/add.svg" alt="Plus" />
+              </div>
+            </div>
+            <button class="modal__button">Add to cart</button>
+          </footer>
         </form>
       </div>
-    </main>
-    <footer></footer>
+    </div>
 
     <script src="./js/index.js"></script>
-
   </body>
 </html>
