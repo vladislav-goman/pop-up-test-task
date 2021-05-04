@@ -20,7 +20,6 @@ body {
   &.modal-open {
     overflow: hidden;
   }
-
 }
 
 section {
@@ -144,17 +143,10 @@ section {
       cursor: pointer;
       color: #474747;
       transition: 0.3s all;
-      outline: 2px solid $white;
 
-      &.active {
+      &.active, &:hover {
         border-color: $primary-color;
-        outline: 2px solid $primary-color;
-        color: $black;
-      }
-
-      &:hover {
-        border-color: $primary-color;
-        outline: 2px solid $primary-color;
+        box-shadow: 0 0 0 2px $primary-color;
         color: $black;
       }
 
@@ -211,16 +203,17 @@ section {
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none;
-      outline: 2px solid $white;
       transition: 0.3s all;
+
       &:hover {
         border-color: $primary-color;
-        outline: 2px solid $primary-color;
+        box-shadow: 0 0 0 2px $primary-color;
       }
       &:focus {
+        box-shadow: 0 0 0 2px $primary-color;
         border-color: $primary-color;
+        outline: none;
         color: #222;
-        outline: 2px solid $primary-color;
       }
     }
   }
@@ -233,26 +226,24 @@ section {
 
   &__quantity {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     border: 1px solid #474747;
     border-radius: 8px;
-    outline: 2px solid $white;
     transition: 0.3s all;
 
     &:hover {
-      outline: 2px solid $primary-color;
       border-color: $primary-color;
+      box-shadow: 0 0 0 2px $primary-color;
     }
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
-      margin: 0;
     }
     .number-input {
       -moz-appearance: textfield;
       border: none;
+      border-radius: 8px;
       padding: 19px 0 15px;
       text-align: center;
       display: block;
@@ -264,30 +255,33 @@ section {
     }
 
     .tweak {
-      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: 0.3s all;
+      user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+      border: 3px solid $white;
+
       .icon {
         width: 9px;
       }
       &.plus {
-        padding: 0 1rem 0 8px;
-        border-bottom-right-radius: 2px;
-        border-top-right-radius: 2px;
-        border-right: 1px solid $white;
+        padding: 0 10px 0 8px;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
       }
       &.minus {
-        padding: 0 8px 0 1rem;
-        border-bottom-left-radius: 2px;
-        border-top-left-radius: 2px;
-        border-left: 1px solid $white;
+        padding: 0 8px 0 10px;
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
       }
       &:hover {
-        background-color: $primary-color;
-        border-color: $primary-color;
+        background-color: $primary-color;   
         .icon {
           filter: invert(100%);
         }
