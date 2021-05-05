@@ -1,6 +1,15 @@
 import data from "../data/xbox.json";
 import checkMarkIcon from "../assets/check.svg";
 import crossIcon from "../assets/negative.svg";
+import XBOXWhite from "../assets/xbox-1-s.jpg";
+import XBOXSilver from "../assets/xbox-silver.jpg";
+import XBOXBlack from "../assets/xbox-black.jpg";
+
+const COLORS_MAP = {
+  59: XBOXWhite,
+  60: XBOXBlack,
+  61: XBOXSilver,
+};
 
 const AVAILABLE_STATUS = "Produkt dostępny";
 
@@ -8,18 +17,21 @@ const productArea = document.querySelector("#product-list");
 const modalWindow = document.querySelector("#modal-product");
 const closeButton = document.querySelector("#close-modal");
 const bodyTag = document.querySelector("body");
-
+const sizeArea = document.querySelector("#label-area");
 const productName = document.querySelector("#product-name");
 const productPrice = document.querySelector("#product-price");
 const colorSelect = document.querySelector("#select-color");
 const isProductAvailable = document.querySelector("#product-available");
+const quantityInputArea = document.querySelector("#quantityInputArea");
+const quantityInput = document.querySelector("#quantityInput");
+const productImage = document.querySelector("#product-image");
 
 const createColorSelectItem = ({ name, id }) =>
   `<option value="${id}">${name}</option>`;
 
 const createSizeItem = ({ name, type, price, amount, status }) =>
   `
-  <label data-status="${status}" data-price="${price}" data-amount="${amount}" for="${type}" class="size__item">${name}</label>
+  <label role="button" tabindex="0" data-status="${status}" data-price="${price}" data-amount="${amount}" for="${type}" class="size__item">${name}</label>
   <input
     class="size__input"
     type="radio"
@@ -28,7 +40,7 @@ const createSizeItem = ({ name, type, price, amount, status }) =>
     id="${type}"
     required
   />
-  `;
+`;
 
 const getStatusHTML = (status) =>
   status === AVAILABLE_STATUS
@@ -58,6 +70,7 @@ const openModal = ({ target }) => {
       (acc, curr) => acc + createSizeItem(curr),
       ""
     );
+    productImage.src = COLORS_MAP[colorItems[0].id];
     modalWindow.classList.add("active");
     bodyTag.classList.add("modal-open");
   }
@@ -79,8 +92,6 @@ modalWindow.addEventListener("click", (event) => {
   }
 });
 
-const sizeArea = document.querySelector("#label-area");
-
 sizeArea.addEventListener("click", ({ target }) => {
   if (target.tagName === "LABEL") {
     const stockAmount = target.dataset.amount;
@@ -97,13 +108,14 @@ sizeArea.addEventListener("click", ({ target }) => {
   }
 });
 
-const quantityInputArea = document.querySelector("#quantityInputArea");
-const quantityInput = document.querySelector("#quantityInput");
-
 quantityInputArea.addEventListener("click", ({ target }) => {
   if (target.classList.contains("plus") || target.id === "plus") {
     quantityInput.stepUp(1);
   } else if (target.classList.contains("minus") || target.id === "minus") {
     quantityInput.stepDown(1);
   }
+});
+
+colorSelect.addEventListener("change", ({ target }) => {
+  productImage.src = COLORS_MAP[target.value];
 });

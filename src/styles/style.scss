@@ -85,7 +85,8 @@ section {
     border-radius: 4px;
     max-width: 745px;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 1fr 60%;
+    grid-gap: 56px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     max-height: 60vh;
     overflow-y: auto;
@@ -110,7 +111,6 @@ section {
 
   &__image {
     width: 100%;
-    padding-right: 56px;
 
     &--container {
       display: flex;
@@ -144,10 +144,11 @@ section {
       color: #474747;
       transition: 0.3s all;
 
-      &.active, &:hover {
+      &.active, &:hover, &:focus {
         border-color: $primary-color;
         box-shadow: 0 0 0 2px $primary-color;
         color: $black;
+        outline: none;
       }
 
       &:last-of-type {
@@ -176,8 +177,9 @@ section {
     top: -7.5px;
     right: -7.5px;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: $danger-red;
+      outline: none;
 
       img {
         filter: invert(100%);
