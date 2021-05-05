@@ -24,10 +24,10 @@
         <div class="modal__image--container">
           <img src="./assets/xbox-1-s.jpg" alt="XBOX" class="modal__image" />
         </div>
-        <form class="modal__content">
+        <form id="product-form" class="modal__content">
           <header class="modal__header">
-            <h2 class="modal__name">
-              Konsola MICROSOFT XBOX ONE S 500GB + FIFA 19
+            <h2 class="modal__name" id="product-name">
+              <!-- Konsola MICROSOFT XBOX ONE S 500GB + FIFA 19 -->
             </h2>
             <button id="close-modal" class="modal__close">
               <img
@@ -39,12 +39,12 @@
           </header>
 
           <div class="modal__main">
-            <p class="modal__price">125 zl</p>
+            <p class="modal__price" id="product-price">125 zl</p>
 
             <div class="size input-section">
               <h3 class="size__label label">Ram size:</h3>
               <fieldset id="label-area" class="size__container">
-                <label for="ram_32" class="size__item">Ram 32 GB</label>
+                <!-- <label for="ram_32" class="size__item">Ram 32 GB</label>
                 <label for="ram_64" class="size__item">Ram 64 GB</label>
                 <label for="ram_96" class="size__item">Ram 96 GB</label>
                 <input
@@ -67,24 +67,25 @@
                   name="ram"
                   value="96"
                   id="ram_96"
-                />
+                /> -->
               </fieldset>
             </div>
 
             <fieldset id="color" class="color input-section">
               <h3 class="color__label label">Color:</h3>
-              <select id="select-color" class="color__select">
-                <option value="silver">Silver</option>
+              <select form="product-form" name="color" id="select-color" class="color__select" required>
+                <!-- <option value="silver">Silver</option>
                 <option value="black">Black</option>
-                <option value="white">White</option>
+                <option value="white">White</option> -->
               </select>
             </fieldset>
           </div>
 
           <footer class="modal__footer">
-            <div class="modal__status">
-              <img src="./assets/check.svg" alt="Check mark" />
-              <p>Product is available</p>
+            <div class="modal__status" id="product-available">
+              Please select Ram and Color
+              <!-- <img src="./assets/check.svg" alt="Check mark" />
+              <p>Product is available</p> -->
             </div>
             <div class="modal__info">
               <img src="./assets/clock.svg" alt="Clock icon" />
@@ -115,7 +116,7 @@
                 <img id="plus" class="icon" src="./assets/add.svg" alt="Plus" />
               </div>
             </div>
-            <button type="submit" class="modal__button">Add to cart</button>
+            <input type="submit" class="modal__button" value="Add to cart" />
           </footer>
         </form>
       </div>
